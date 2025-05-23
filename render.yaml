@@ -1,0 +1,15 @@
+services:
+  - type: web
+    name: icd-search-api
+    env: python
+    plan: free
+    branch: main
+    buildCommand: pip install -r requirements.txt
+    startCommand: gunicorn app:app --bind 0.0.0.0:$PORT
+    envVars:
+      - key: PORT
+        value: 8000
+      - key: CLIENT_ID
+        value: b8f6b3fa-7f85-4ed9-b4e1-2e13ae1d993d_54a47482-ebbf-4c17-a242-3f1801826d37
+      - key: CLIENT_SECRET
+        value: s664hqvwPt0bbYlBzolI0O1knbI7gqz3z8jv/TJZn94=
