@@ -60,3 +60,6 @@ def buscar_icd(titulo: str = Query(..., description="Título do trabalho clínic
         return {"resultados": resultados}
     except Exception as e:
         return {"erro": str(e)}
+@app.get("/")
+def root():
+    return {"status": "API ICD está online 🚀"}
